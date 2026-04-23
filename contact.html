@@ -6,6 +6,7 @@
   <title>Contact — CRS Automotive Parts, Inc.</title>
   <link rel="stylesheet" href="febi-design-system.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 </head>
 <body>
 
@@ -161,17 +162,8 @@
         </div>
       </div>
     </div>
-    <div class="map-embed">
-      <iframe
-        src="https://maps.google.com/maps?q=9434+158th+St,+Jamaica,+NY+11433&t=&z=16&ie=UTF8&iwloc=&output=embed"
-        width="100%"
-        height="100%"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="CRS Automotive Parts location map">
-      </iframe>
+    <div class="map-wrap">
+      <div class="map-embed" id="crs-map"></div>
     </div>
   </section>
 
@@ -245,6 +237,27 @@
     });
   </script>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WLEg=" crossorigin=""></script>
+  <script>
+    (function () {
+      const lat = 40.6988, lng = -73.8093;
+      const map = L.map('crs-map', { scrollWheelZoom: false }).setView([lat, lng], 16);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        maxZoom: 19
+      }).addTo(map);
+      const icon = L.divIcon({
+        className: '',
+        html: '<div style="width:16px;height:16px;background:#e3101c;border:3px solid #fff;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,0.5);"></div>',
+        iconSize: [16, 16],
+        iconAnchor: [8, 8]
+      });
+      L.marker([lat, lng], { icon })
+        .addTo(map)
+        .bindPopup('<strong>CRS Automotive Parts, Inc.</strong><br>9434 158th Street<br>Jamaica, NY 11433')
+        .openPopup();
+    })();
+  </script>
   <script src="splash.js"></script>
 </body>
 </html>

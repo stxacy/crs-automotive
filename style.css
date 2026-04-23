@@ -1586,11 +1586,21 @@ ul { list-style: none; padding: 0; }
   color: #fff;
 }
 
+.map-wrap {
+  padding: 2.5rem 0 3rem;
+  background: #f5f5f5;
+}
+
 .map-embed {
   width: 100%;
-  height: 420px;
+  max-width: 900px;
+  height: 560px;
+  margin: 0 auto;
   display: block;
   background: var(--febi-gray-200);
+  border-radius: var(--febi-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--febi-shadow);
 }
 
 .map-embed iframe {
@@ -1599,12 +1609,13 @@ ul { list-style: none; padding: 0; }
 }
 
 @media (max-width: 768px) {
-  .map-embed { height: 320px; }
+  .map-embed { height: 420px; }
   .map-label-inner .btn-sm { margin-left: 0; }
 }
 
 @media (max-width: 480px) {
-  .map-embed { height: 260px; }
+  .map-embed { height: 340px; }
+  .map-wrap { padding: 1.5rem 0 2rem; }
 }
 
 /* ============================================================
