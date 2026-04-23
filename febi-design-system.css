@@ -1,0 +1,262 @@
+/*
+ * febi Design System
+ * Extracted from: febi.com (Ferdinand Bilstein GmbH + Co. KG)
+ * Source: merged Bootstrap-based CSS + febi theme overrides
+ * ============================================================
+ */
+
+/* ============================================================
+   COLOUR PALETTE
+   ============================================================ */
+:root {
+  /* Brand */
+  --febi-red:           #e3101c;   /* Primary — febi red */
+  --febi-red-dark:      #b60d16;   /* Primary hover / active */
+  --febi-red-darker:    #880a11;   /* Primary dark variant */
+  --febi-maroon:        #741644;   /* Secondary — Bilstein maroon */
+  --febi-maroon-dark:   #5d1236;   /* Secondary hover */
+
+  /* Neutrals */
+  --febi-black:         #000000;
+  --febi-gray-900:      #333333;
+  --febi-gray-800:      #343a40;
+  --febi-gray-700:      #4a4a4a;   /* Dark / strong text */
+  --febi-gray-600:      #6c757d;
+  --febi-gray-500:      #626262;   /* Body text */
+  --febi-gray-400:      #ced4da;
+  --febi-gray-300:      #dae1e8;   /* Border colour */
+  --febi-gray-200:      #f1f1f1;   /* Light bg / disabled */
+  --febi-gray-100:      #f8f9fa;
+  --febi-white:         #ffffff;
+
+  /* Semantic */
+  --febi-success:       #198754;
+  --febi-info:          #0dcaf0;
+  --febi-warning:       #ffc107;
+  --febi-danger:        #e3101c;   /* Same as primary */
+}
+
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+
+/*
+ * Font Families (hosted at /typo3conf/ext/febi_theme/Resources/Public/Fonts/Theme/)
+ *
+ * Helvetica Neue World W07_45 Lt  → light weight body copy
+ * Helvetica Neue World W07_55 Rm  → regular / default body
+ * Helvetica Neue World W07_75 Bd  → bold / page-layout-101 headings
+ * "Helvetica Neue World W07_75 Lt" appears as heading font (note: named Lt but weight 500)
+ *
+ * Fallback stack: sans-serif
+ */
+
+:root {
+  --febi-font-body:       "Helvetica Neue World W07_55 Rm", sans-serif;
+  --febi-font-light:      "Helvetica Neue World W07_45 Lt", sans-serif;
+  --febi-font-heading:    "Helvetica Neue World W07_75 Lt", sans-serif; /* headings */
+  --febi-font-bold:       "Helvetica Neue World W07_75 Bd", sans-serif; /* page-layout-101 */
+}
+
+/* Body defaults */
+:root {
+  --febi-body-font-size:    1rem;       /* 16px */
+  --febi-body-font-weight:  400;
+  --febi-body-line-height:  1.438;
+  --febi-body-color:        #626262;
+  --febi-body-bg:           #ffffff;
+}
+
+/* Heading sizes (desktop / min-width: 1200px) */
+:root {
+  --febi-h1-size:   3.5rem;    /* 56px */
+  --febi-h2-size:   2.8rem;    /* 44.8px */
+  --febi-h3-size:   1.875rem;  /* 30px */
+  --febi-h4-size:   1.75rem;   /* 28px */
+  --febi-h5-size:   1.25rem;   /* 20px */
+  --febi-h6-size:   1rem;      /* 16px */
+
+  --febi-heading-font-weight: 500;
+  --febi-heading-line-height: 1.2;
+  --febi-heading-color:       #e3101c;  /* red */
+  --febi-heading-margin-bottom: 1.5rem;
+}
+
+/* Fluid heading sizes (mobile-first — clamp equivalents from calc()) */
+/* h1: calc(1.475rem + 2.7vw) → 3.5rem at xl */
+/* h2: calc(1.405rem + 1.86vw) → 2.8rem at xl */
+/* h3: calc(1.3125rem + 0.75vw) → 1.875rem at xl */
+/* h4: calc(1.3rem + 0.6vw) → 1.75rem at xl */
+
+/* Font weights used */
+:root {
+  --febi-fw-light:   300;
+  --febi-fw-normal:  400;
+  --febi-fw-medium:  500;
+  --febi-fw-bold:    700;
+}
+
+
+/* ============================================================
+   SPACING (Bootstrap 5 scale, as used)
+   ============================================================ */
+:root {
+  --febi-space-1:   0.375rem;  /*  6px */
+  --febi-space-2:   0.75rem;   /* 12px */
+  --febi-space-3:   1.5rem;    /* 24px */
+  --febi-space-4:   2.25rem;   /* 36px */
+  --febi-space-5:   4.5rem;    /* 72px */
+  --febi-space-6:   1rem;      /* 16px — custom sixth step */
+  --febi-gutter:    2rem;      /* 32px — default grid gutter */
+}
+
+
+/* ============================================================
+   LAYOUT / BREAKPOINTS
+   ============================================================ */
+:root {
+  --febi-bp-sm:     576px;
+  --febi-bp-md:     768px;
+  --febi-bp-lg:     992px;
+  --febi-bp-xl:     1200px;
+  --febi-bp-xxl:    1400px;
+}
+
+
+/* ============================================================
+   BORDERS & RADIUS
+   ============================================================ */
+:root {
+  --febi-border-width:  1px;
+  --febi-border-style:  solid;
+  --febi-border-color:  #dae1e8;
+
+  --febi-radius-sm:     0.25rem;  /*  4px */
+  --febi-radius:        0.375rem; /*  6px */
+  --febi-radius-lg:     0.5rem;   /*  8px */
+  --febi-radius-xl:     1rem;     /* 16px */
+  --febi-radius-xxl:    2rem;     /* 32px */
+  --febi-radius-pill:   50rem;
+}
+
+
+/* ============================================================
+   SHADOWS
+   ============================================================ */
+:root {
+  --febi-shadow-sm:  0 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
+  --febi-shadow:     0 0.25rem 1rem rgba(0, 0, 0, 0.15);
+  --febi-shadow-lg:  0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+
+/* ============================================================
+   LINKS
+   ============================================================ */
+:root {
+  --febi-link-color:        #e3101c;
+  --febi-link-decoration:   underline;
+  --febi-link-hover-color:  #b60d16;
+}
+
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+/*
+ * Base button token set (mirrors febi's .btn overrides):
+ *   font-family: Helvetica Neue World W07_55 Rm
+ *   font-size:   1rem
+ *   font-weight: 400
+ *   line-height: 1.438
+ *   padding:     0.375rem 0.75rem  (default)
+ *              / 0.25rem 0.5rem    (sm)
+ *              / 0.5rem 1rem       (lg, font-size 1.25rem)
+ *   border-radius: 0.375rem
+ *   transition: color, background-color, border-color, box-shadow 0.15s ease-in-out
+ */
+
+/* .btn-primary */
+:root {
+  --febi-btn-primary-bg:          #e3101c;
+  --febi-btn-primary-color:       #ffffff;
+  --febi-btn-primary-border:      #e3101c;
+  --febi-btn-primary-hover-bg:    #c10e18;
+  --febi-btn-primary-hover-color: #ffffff;
+  --febi-btn-primary-active-bg:   #b60d16;
+}
+
+/* .btn-secondary */
+:root {
+  --febi-btn-secondary-bg:          #741644;
+  --febi-btn-secondary-color:       #ffffff;
+  --febi-btn-secondary-border:      #741644;
+  --febi-btn-secondary-hover-bg:    #63133a;
+  --febi-btn-secondary-hover-color: #ffffff;
+  --febi-btn-secondary-active-bg:   #5d1236;
+}
+
+/* .btn-light */
+:root {
+  --febi-btn-light-bg:          #f1f1f1;
+  --febi-btn-light-color:       #000000;
+  --febi-btn-light-hover-bg:    #cdcdcd;
+}
+
+/* .btn-dark */
+:root {
+  --febi-btn-dark-bg:           #4a4a4a;
+  --febi-btn-dark-color:        #ffffff;
+  --febi-btn-dark-hover-bg:     #656565;
+}
+
+
+/* ============================================================
+   THEMES (data-bs-theme values used in febi)
+   ============================================================
+   "primary"  — red bg, white text/headings
+   "secondary"— maroon bg
+   "light"    — #f1f1f1 bg, #626262 text
+   "white"    — #ffffff bg
+   "dark"     — #333333 bg, #dae1e8 text
+   ============================================================ */
+
+
+/* ============================================================
+   DARK MODE OVERRIDES (data-bs-theme="dark")
+   ============================================================ */
+/* Body bg: #333333, text: #dae1e8, border: #4a4a4a            */
+/* Link:    #ee7077 (hover: #f18d92)                           */
+/* Heading: inherits                                           */
+
+
+/* ============================================================
+   QUICK-REFERENCE UTILITY MAP
+   ============================================================
+
+   BRAND COLOURS
+   ┌─────────────────────────────────────────────────────┐
+   │  febi Red      #e3101c   → primary actions, headings │
+   │  febi Maroon   #741644   → secondary / accents       │
+   │  Body Grey     #626262   → body text                 │
+   │  Dark Grey     #4a4a4a   → dark surfaces             │
+   │  Border        #dae1e8   → dividers, inputs          │
+   │  Light         #f1f1f1   → backgrounds, disabled     │
+   └─────────────────────────────────────────────────────┘
+
+   TYPOGRAPHY
+   ┌─────────────────────────────────────────────────────┐
+   │  Body     HNW W07 55 Rm  16px / 1.438 / #626262     │
+   │  Headings HNW W07 75 Lt  500wt / 1.2lh / #e3101c   │
+   │  Bold     HNW W07 75 Bd  used on layout 101         │
+   │  Light    HNW W07 45 Lt  light copy                 │
+   │  h1 56px · h2 44.8px · h3 30px · h4 28px           │
+   │  h5 20px · h6 16px                                  │
+   └─────────────────────────────────────────────────────┘
+
+   BREAKPOINTS
+   sm 576px · md 768px · lg 992px · xl 1200px · xxl 1400px
+
+   ============================================================ */

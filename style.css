@@ -1524,3 +1524,85 @@ ul { list-style: none; padding: 0; }
   background: #fff;
   color: var(--febi-gray-900);
 }
+
+/* ============================================================
+   MOBILE & TABLET OPTIMISATION
+   ============================================================ */
+
+/* Tablet — ≤ 992px ------------------------------------------ */
+@media (max-width: 992px) {
+  .section { padding: 4rem 0; }
+
+  .page-hero { padding: 7rem 0 3rem; }
+
+  .hero-content { padding: 7rem 0 3rem; }
+
+  .products-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--febi-space-3);
+  }
+
+  .about-values { grid-template-columns: 1fr 1fr; }
+
+  .job-header { padding: var(--febi-space-4); }
+  .job-body   { padding: var(--febi-space-4); }
+  .employ-general { padding: var(--febi-space-4); }
+}
+
+/* Mobile — ≤ 768px ------------------------------------------ */
+@media (max-width: 768px) {
+  .section { padding: 3rem 0; }
+
+  /* Hero */
+  .hero-content { padding: 6rem 0 2.5rem; }
+  .hero h1 { font-size: clamp(2.2rem, 8vw, 3.2rem); }
+  .hero-sub { font-size: 1rem; }
+  .hero-actions { gap: 0.75rem; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+
+  /* Page hero */
+  .page-hero { padding: 6rem 0 2.5rem; }
+  .page-hero h1 { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+
+  /* Product detail: remove sticky gallery on mobile so gallery
+     comes first, info scrolls below naturally */
+  .product-gallery { position: static; }
+
+  /* Larger thumb targets for touch */
+  .gallery-thumb { width: 72px; height: 72px; }
+
+  /* About values: single column on small tablets */
+  .about-values { grid-template-columns: 1fr; }
+
+  /* Employment */
+  .job-header { padding: var(--febi-space-3) var(--febi-space-3); }
+  .job-body   { padding: var(--febi-space-3); gap: var(--febi-space-3); }
+  .employ-general { padding: var(--febi-space-3); }
+
+  /* Footer logo slightly smaller on mobile */
+  .footer-logo-img { height: 64px; }
+}
+
+/* Mobile — ≤ 480px ------------------------------------------ */
+@media (max-width: 480px) {
+  .section { padding: 2.5rem 0; }
+
+  /* Hero */
+  .hero-content { padding: 5.5rem 0 2rem; }
+
+  /* Page hero */
+  .page-hero { padding: 5.5rem 0 2rem; }
+
+  /* Gallery thumbs: larger row for one-handed tap */
+  .gallery-thumbs { gap: 0.4rem; }
+  .gallery-thumb  { width: 64px; height: 64px; }
+
+  /* Product CTA box */
+  .product-cta-box { padding: var(--febi-space-3); }
+  .product-cta-box .btn { width: 100%; justify-content: center; }
+
+  /* Lightbox arrows — tighter on very small screens */
+  .lb-prev, .lb-next { width: 40px; height: 40px; }
+  .lb-prev svg, .lb-next svg { width: 18px; height: 18px; }
+}
