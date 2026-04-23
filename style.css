@@ -217,6 +217,27 @@ ul { list-style: none; padding: 0; }
 .nav-toggle.active span:nth-child(2) { opacity: 0; }
 .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+/* Nav close button — hidden on desktop */
+.nav-close-item { display: none; }
+
+.nav-close {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  transition: color 0.15s;
+}
+.nav-close svg { width: 16px; height: 16px; }
+.nav-close:hover { color: var(--febi-red); }
+
 @media (max-width: 768px) {
   .nav-toggle { display: flex; }
 
@@ -235,6 +256,7 @@ ul { list-style: none; padding: 0; }
     transition: right 0.3s ease;
   }
   .nav-links.nav-open { right: 0; }
+  .nav-close-item { display: block; width: 100%; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 0.5rem; }
   .nav-links li { width: 100%; }
   .nav-links li a { font-size: 1.1rem; }
   .btn-call { width: 100%; justify-content: center; padding: 0.75rem 1.25rem; }

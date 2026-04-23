@@ -16,6 +16,7 @@
           <img src="crslogo.png" alt="CRS Automotive Parts" class="nav-logo-img">
         </a>
         <ul class="nav-links">
+          <li class="nav-close-item"><button class="nav-close" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Back</button></li>
           <li><a href="products.html" class="nav-active">Products</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="employment.html">Careers</a></li>
@@ -140,6 +141,8 @@
     const toggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
     toggle.addEventListener('click', () => { navLinks.classList.toggle('nav-open'); toggle.classList.toggle('active'); });
+    const navClose = document.querySelector('.nav-close');
+    if (navClose) navClose.addEventListener('click', () => { navLinks.classList.remove('nav-open'); toggle.classList.remove('active'); });
     function setFeatured(thumb, src) {
       document.getElementById('featuredImg').src = src;
       document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
