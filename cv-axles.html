@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Axles — CRS Automotive Parts, Inc.</title>
+  <link rel="stylesheet" href="../_skills/css/febi-design-system.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header scrolled">
+    <div class="container">
+      <nav class="site-nav">
+        <a href="index.html" class="site-logo">
+          <img src="crslogo.png" alt="CRS Automotive Parts" class="nav-logo-img">
+        </a>
+        <ul class="nav-links">
+          <li><a href="products.html" class="nav-active">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="employment.html">Careers</a></li>
+          <li><a href="contact.html" class="btn-call">Contact Us</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <p class="hero-eyebrow">Axles · OE Quality</p>
+        <h1>CV Axles</h1>
+        <p>Front wheel drive CV axle shafts engineered for constant velocity across the full suspension travel range.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="section product-detail-section">
+    <div class="container">
+      <div class="product-detail-grid">
+
+        <!-- Gallery -->
+        <div class="product-gallery">
+          <div class="gallery-featured">
+            <img src="images/cv-axle.jpg" alt="CV Axle" id="featuredImg">
+          </div>
+          <div class="gallery-thumbs">
+            <div class="gallery-thumb active" onclick="setFeatured(this, 'images/cv-axle.jpg')">
+              <img src="images/cv-axle.jpg" alt="CV Axle">
+            </div>
+          </div>
+        </div>
+
+        <!-- Info -->
+        <div class="product-info">
+          <a href="products.html" class="product-info-back">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            All Products
+          </a>
+          <span class="product-tag">Axles</span>
+          <h1>CV Axles</h1>
+          <p class="product-info-desc">
+            Front wheel drive CV axle shafts engineered for constant velocity across the full suspension
+            travel range. Built with precision inner and outer CV joints and high-quality boots for
+            extended service life. Supplied new — not remanufactured — for consistent, reliable performance
+            across a broad range of FWD domestic and import vehicles.
+          </p>
+
+          <h4>Key Features</h4>
+          <ul class="product-features">
+            <li>Inner &amp; outer CV joints</li>
+            <li>Pre-packed with grease</li>
+            <li>New — not remanufactured</li>
+            <li>Wide vehicle coverage</li>
+            <li>High-quality boot material</li>
+          </ul>
+
+          <div class="product-cta-box">
+            <p>Need a specific fitment or part number? Our team can help.</p>
+            <a href="contact.html" class="btn btn-primary">Enquire Now</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="crslogo.png" alt="CRS Automotive Parts" class="footer-logo-img">
+          <p>OE Quality Hub Bearings, Prop Shaft Assemblies &amp; CV Axles. Based in Jamaica, NY.</p>
+        </div>
+        <div class="footer-links">
+          <strong>Products</strong>
+          <ul>
+            <li><a href="hub-bearings.html">Hub Bearing Assemblies</a></li>
+            <li><a href="prop-shaft.html">Prop Shaft Assemblies</a></li>
+            <li><a href="cv-axles.html">CV Axles</a></li>
+            <li><a href="wheel-bearings.html">Wheel Bearings</a></li>
+            <li><a href="ignition-wires.html">Ignition Wire Sets</a></li>
+            <li><a href="maf-sensors.html">MAF Sensors</a></li>
+            <li><a href="oxygen-sensors.html">Oxygen Sensors</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <strong>Company</strong>
+          <ul>
+            <li><a href="about.html">About CRS</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="employment.html">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <strong>Contact</strong>
+          <p><a href="tel:+17187391720">718-739-1720</a></p>
+          <p><a href="mailto:crsserviceteam@aol.com">crsserviceteam@aol.com</a></p>
+          <p>9434 158th Street<br>Jamaica, NY 11433</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 CRS Automotive Parts, Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => { navLinks.classList.toggle('nav-open'); toggle.classList.toggle('active'); });
+    function setFeatured(thumb, src) {
+      document.getElementById('featuredImg').src = src;
+      document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    }
+  </script>
+  <script src="lightbox.js"></script>
+  <script src="splash.js"></script>
+</body>
+</html>
